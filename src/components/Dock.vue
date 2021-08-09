@@ -23,7 +23,10 @@ export default {
   width: 90%;
   height: 70px;
   background-image: linear-gradient(to left, #e2e2e2dc, #cac8ccdc, #e2e2e2dc);
+  backdrop-filter: saturate(210%) blur(60px);
   border-radius: 20px;
   bottom: 5px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 8px 40px rgba(0, 0, 0, 0.55);
 }
 </style>

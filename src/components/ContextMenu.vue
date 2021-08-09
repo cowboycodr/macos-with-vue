@@ -27,28 +27,24 @@ export default {
     function showMenu(e) {
       e.preventDefault();
 
-      if (document.getElementById("contextMenu").style.display == "block")
-        hideMenu();
-      else {
-        var menu = document.getElementById("contextMenu");
+      var menu = document.getElementById("contextMenu");
 
-        menu.style.display = "block"
+      menu.style.display = "block";
 
-        if (window.innerWidth - e.pageX > menu.offsetWidth) {
-          menu.style.left = e.pageX + 10 + "px";
-        } else {
-          menu.style.left = e.pageX - menu.clientWidth - 10 + "px"; 
-        }
+      if (window.innerWidth - e.pageX > menu.offsetWidth) {
+        menu.style.left = e.pageX + 10 + "px";
+      } else {
+        menu.style.left = e.pageX - menu.clientWidth - 10 + "px";
+      }
 
-        if (window.innerHeight - e.pageY > menu.offsetHeight) {
-          console.log(window.innerHeight, e.pageY, menu.offsetHeight)
+      if (window.innerHeight - e.pageY > menu.offsetHeight) {
+        console.log(window.innerHeight, e.pageY, menu.offsetHeight);
 
-          menu.style.top = e.pageY + 10 + "px";
-        } else {
-          console.log(menu.clientHeight)
+        menu.style.top = e.pageY + 10 + "px";
+      } else {
+        console.log(menu.clientHeight);
 
-          menu.style.top = e.pageY - menu.clientHeight + "px"
-        }
+        menu.style.top = e.pageY - menu.clientHeight + "px";
       }
     }
   },
