@@ -4,7 +4,7 @@
       <li>Finder</li>
     </ul>
     <ul>
-      <li><a href="https://github.com/cowboycodr" target="_blank">GitHub</a></li>
+      <li><a href="https://github.com/cowboycodr/macos-with-vue" target="_blank">GitHub</a></li>
     </ul>
   </div>
 </template>
@@ -49,6 +49,7 @@ export default {
   border-radius: 9px;
   overflow: auto;
   text-align: start;
+  min-width: 100px;
   z-index: 9999;
 }
 
