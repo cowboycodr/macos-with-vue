@@ -10,12 +10,41 @@
       <span class="menubar-button">Window</span>
       <span class="menubar-button">Help</span>
     </span>
+    <span class="time">{{ hours }}:{{minutes}}:{{seconds}}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'menubar'
+  name: 'menubar',
+  data: function() {
+    return {
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      hourtime: '',
+    }
+  },
+  methods: {
+    getZeroPad(n) {
+      return (parseInt(n, 10) >= 10 ? '' : '0') + n
+    },
+    getHourTime(h) {
+      return h >= 12 ? 'PM' : 'AM'
+    },
+    updateDateTime() {
+      const now = new Date();
+      this.hours = now.getHours();
+      this.minutes = this.getZeroPad(now.getMinutes());
+      this.seconds = this.getZeroPad(now.getSeconds());
+      this.hourtime = this.getHourTime(this.hours);
+      this.hours = this.hours % 12 || 12;
+      this.$options.timer = window.setTimeout(this.updateDateTime, 1000);
+    }
+  },
+  mounted() {
+    let timer = window.setTimeout(this.updateDateTime, 1000);
+  },
 }
 </script>
 
@@ -54,5 +83,12 @@ export default {
 
 .apple-icon:hover {
   cursor: pointer;
+}
+
+.time {
+  margin-left: auto;
+  padding-right: 20px;
+
+  font-weight: 500;
 }
 </style>
