@@ -1,7 +1,14 @@
 <template>
   <div id="contextMenu" class="context-menu" style="display: none;">
     <ul>
-      <li>Finder</li>
+      <li>New Folder</li>
+    </ul>
+    <ul>
+      <li>Get Info</li>
+    </ul>
+    <ul>
+      <li>Change Desktop Background...</li>
+      <li>Show View Options</li>
     </ul>
     <ul>
       <li>
@@ -55,7 +62,7 @@ export default {
 .context-menu {
   position: absolute;
   text-align: center;
-  background: rgba(216, 216, 216, 0.5);
+  background: rgba(216, 216, 216, 0.7);
   backdrop-filter: blur(60px) saturate(210%);
 
   border: 0.5px solid rgba(0, 0, 0, 0.2);
@@ -81,6 +88,8 @@ export default {
   padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
+
+  font-weight: 500;
 }
 
 .context-menu ul li a {
